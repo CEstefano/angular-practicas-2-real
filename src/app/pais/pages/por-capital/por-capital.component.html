@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col">
+        <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
+
+      <app-pais-input
+        placeholder = "buscar x capital"
+        (onEnter)="buscarCapital($event)"
+        (onDebounce)="sugerencias($event)">
+      </app-pais-input>
+
+      <!-- [TermBusqueda]="TermBusqueda" -->
+
+  </div>
+</div>
+
+  <div *ngIf="hayError" class="alert alert-danger" role="alert">
+    <hr>
+    No existe una capital con el nombre : {{termino}}
+  </div>
+
+  <hr>
+
+  <div *ngIf="rcapitalR.length > 0" class="row">
+
+    <div class="col">
+      <app-pais-tabla [paisesdelPadre]="rcapitalR" ></app-pais-tabla>
+    </div>
+
+  </div>

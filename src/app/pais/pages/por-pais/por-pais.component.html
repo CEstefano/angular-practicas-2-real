@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col">
+        <!-- <label for="exampleFormControlInput1" class="form-label">Email address</label> -->
+
+        <app-pais-input
+        placeholder = "Buscar x Pais"
+        (onEnter)="buscarPais($event)"
+        (onDebounce)="sugerencias($event)">
+      </app-pais-input>
+
+  </div>
+</div>
+
+  <div *ngIf="hayError" class="alert alert-danger" role="alert">
+    <hr>
+    No existe un pais con el nombre : {{termino}}
+  </div>
+
+  <hr>
+
+  <div *ngIf="rpaisesR.length > 0" class="row">
+
+    <div class="col">
+      <app-pais-tabla [paisesdelPadre]="rpaisesR" ></app-pais-tabla>
+    </div>
+
+  </div>
+
+
+
+
+

@@ -1,0 +1,10 @@
+<form (ngSubmit)="buscarPais()" class="autocomplete-off">
+  <input type="text"
+  class="form-control"
+  name="termino"
+  [placeholder] = "placeholder"
+  [(ngModel)]="termino"
+  (input)="teclaOprimida()">
+</form>
+<!-- MI FORMA DE ENVIAR EL STRING QU E DEBE APARECER EN EL PLACEHOLDER X @Input -->
+<!-- [placeholder]='TermBusqueda' -->
